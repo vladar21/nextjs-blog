@@ -15,7 +15,7 @@ export default function Home({ allPostsData }) {
         <p>[Your Self Introduction]</p>
         <p>
           (This is a sample website - you’ll be building a site like this on{' '}
-          <Link href="/posts/first-post">our Next.js tutorial</Link>.)
+          <Link href="https://nextjs.org/learn/basics/create-nextjs-app?utm_source=next-site&utm_medium=nav-cta&utm_campaign=next-website">our Next.js tutorial</Link>.)
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
