@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/tailwindcss/app.vue"  ],
+, "pages/tailwindcss/app.vue", "tailwind.config.js"  ],
   "exclude": [
     "node_modules"
   ]
