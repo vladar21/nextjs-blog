@@ -1,15 +1,9 @@
 import Link from 'next/link'
+import {useState} from 'react';
 
-const handleClick = (e) =>  {
-  console.log('Free pizza!');
-  console.log(e);
-}
-
-export default function Layout({
-    
-}: {
-  
-}) {
+const isOpen = false;
+export default function Layout() {
+  const [isOpen, toggle] = useState(false);
   return (
     <header className="bg-gray-900">
         <div className='flex justify-between px-4 py-3'>
@@ -29,7 +23,7 @@ export default function Layout({
             </svg>
           </div>
           <div className="flex">
-            <button onClick={handleClick} type='button' className='px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white'>
+            <button onClick={() => toggle(!isOpen)} type='button' className='px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white'>
               <svg className="h-6 w-6 fill-current" viewBox="0 0 18 14" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 1C0 0.447715 0.447715 0 1 0H17C17.5523 0 18 0.447715 18 1C18 1.55228 17.5523 2 17 2H1C0.447716 2 0 1.55228 0 1ZM0 7C0 6.44772 0.447715 6 1 6H17C17.5523 6 18 6.44772 18 7C18 7.55228 17.5523 8 17 8H1C0.447716 8 0 7.55228 0 7ZM1 12C0.447715 12 0 12.4477 0 13C0 13.5523 0.447716 14 1 14H17C17.5523 14 18 13.5523 18 13C18 12.4477 17.5523 12 17 12H1Z" />
               </svg>
@@ -37,7 +31,7 @@ export default function Layout({
           </div>
         </div>
         ``
-        <nav>
+        <nav style={{ display: isOpen?"none":"block" }}>
           <div className='px-2 pt-2 pb-5 border-b border-gray-800'>
               <a href='#'className='block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800'>List your prop</a>
               <a href='#'className='mt-1 block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800'>Trips</a>
