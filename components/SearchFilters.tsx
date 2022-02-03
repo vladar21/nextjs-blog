@@ -5,7 +5,8 @@ const isOpen = false;
 export default function Layout() {
   const [isOpen, toggle] = useState(false);
   return (
-    <section className='flex justify-between bg-gray-800 px-4 py-3'>
+    <section className='bg-gray-800'>
+        <div className='flex justify-between px-4 py-3'>
         <div className='relative'>
             <div className='absolute inset-y-0 left-0 flex items-center pl-3'>
             <svg className='h-6 w-6 fill-current text-gray-600' viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -15,13 +16,79 @@ export default function Layout() {
             <input className='w-5/6 bg-gray-900 focus:outline-none focus:bg-white focus:text-gray-900 text-white rounded-lg pl-10 py-2 pr-3' placeholder="Search by keywords"/>
         </div> 
         
-            <button className='flex justify-center items-center bg-gray-700 hover:bg-gray-600 focus:text-gray-900 rounded-lg shadow pl-3 pr-3'>
+        <button className='flex justify-center items-center bg-gray-700 hover:bg-gray-600 focus:text-gray-900 rounded-lg shadow pl-3 pr-3'>
             <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 1C0 0.447715 0.447715 0 1 0H17C17.5523 0 18 0.447715 18 1C18 1.55228 17.5523 2 17 2H1C0.447716 2 0 1.55228 0 1ZM3 7C3 6.44772 3.44772 6 4 6H14C14.5523 6 15 6.44772 15 7C15 7.55228 14.5523 8 14 8H4C3.44772 8 3 7.55228 3 7ZM7 12C6.44772 12 6 12.4477 6 13C6 13.5523 6.44772 14 7 14H11C11.5523 14 12 13.5523 12 13C12 12.4477 11.5523 12 11 12H7Z" fill="#A0AEC0"/>
-    </svg>  
+                <path d="M0 1C0 0.447715 0.447715 0 1 0H17C17.5523 0 18 0.447715 18 1C18 1.55228 17.5523 2 17 2H1C0.447716 2 0 1.55228 0 1ZM3 7C3 6.44772 3.44772 6 4 6H14C14.5523 6 15 6.44772 15 7C15 7.55228 14.5523 8 14 8H4C3.44772 8 3 7.55228 3 7ZM7 12C6.44772 12 6 12.4477 6 13C6 13.5523 6.44772 14 7 14H11C11.5523 14 12 13.5523 12 13C12 12.4477 11.5523 12 11 12H7Z" fill="#A0AEC0"/>
+            </svg>  
             <span className='ml-1 text-white font-medium'>Filters</span>
-        </button>    
+        </button>   
+        </div>
         
+        <div>
+            <fieldset>
+                <div>
+                    <label>
+                        <span>Bedrooms</span>
+                        <select>
+                            <option>4</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Bathrooms</span>
+                        <select>
+                            <option>2</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <span>Price range</span>
+                        <select>
+                            <option>Up to $2,000/wk</option>
+                        </select>
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Property Type</legend>
+                <label>
+                    <input type='radio' name='propertyType' value='house' />House
+                </label>
+                <label>
+                    <input type='radio' name='propertyType' value='apartment' />Apartment
+                </label>
+                <label>
+                    <input type='radio' name='propertyType' value='loft' />Loft
+                </label>
+                <label>
+                    <input type='radio' name='propertyType' value='townhouse' />Townhouse
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Amenities</legend>
+                <label>
+                    <input type='checkbox' name='balcony' />Balcony
+                </label>
+                <label>
+                    <input type='checkbox' name='airConditioning' />Air conditioning
+                </label>
+                <label>
+                    <input type='checkbox' name='pool' />Pool
+                </label>
+                <label>
+                    <input type='checkbox' name='Beach' />Beach
+                </label>
+                <label>
+                    <input type='checkbox' name='petFriendly' />Pet friendly
+                </label>
+                <label>
+                    <input type='checkbox' name='kidFriendly' />Kid friendly
+                </label>
+                <label>
+                    <input type='checkbox' name='parking' />Parking
+                </label>
+            </fieldset>
+        </div>        
     </section>
   )
 }
