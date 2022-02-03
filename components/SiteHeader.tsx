@@ -33,7 +33,7 @@ export default function Layout() {
             </button>          
           </div>
         </div>
-        ``
+        
         <nav style={{ display: isOpen?"none":"block" }}>
           <div className='px-2 pt-2 pb-5 border-b border-gray-800'>
               <a href='#'className='block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800'>List your prop</a>
