@@ -16,7 +16,7 @@ export default function Layout() {
             <input className='w-5/6 bg-gray-900 focus:outline-none focus:bg-white focus:text-gray-900 text-white rounded-lg pl-10 py-2 pr-3' placeholder="Search by keywords"/>
         </div> 
         
-        <button className='flex justify-center items-center bg-gray-700 hover:bg-gray-600 focus:text-gray-900 rounded-lg shadow pl-3 pr-3'>
+        <button onClick={() => toggle(!isOpen)} className='flex justify-center items-center bg-gray-700 hover:bg-gray-600 focus:text-gray-900 rounded-lg shadow pl-3 pr-3'>
             <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 1C0 0.447715 0.447715 0 1 0H17C17.5523 0 18 0.447715 18 1C18 1.55228 17.5523 2 17 2H1C0.447716 2 0 1.55228 0 1ZM3 7C3 6.44772 3.44772 6 4 6H14C14.5523 6 15 6.44772 15 7C15 7.55228 14.5523 8 14 8H4C3.44772 8 3 7.55228 3 7ZM7 12C6.44772 12 6 12.4477 6 13C6 13.5523 6.44772 14 7 14H11C11.5523 14 12 13.5523 12 13C12 12.4477 11.5523 12 11 12H7Z" fill="#A0AEC0"/>
             </svg>  
@@ -24,71 +24,75 @@ export default function Layout() {
         </button>   
         </div>
         
-        <div>
-            <fieldset>
-                <div>
-                    <label>
-                        <span>Bedrooms</span>
-                        <select>
+        <form style={{ display: isOpen?"none":"block" }}>
+            <fieldset className='px-4 py-4 border-t border-gray-900'>
+                <div className='flex -mx-2'>
+                    <label className='block w-1/2 px-2'>
+                        <span className='text-sm font-semibold text-gray-500'>Bedrooms</span>
+                        <select className='mt-1 block w-full rounded-lg bg-gray-700 border-transparent shadow text-white leading-snug focus:bg-gray-600 focus:shadow-none'>
                             <option>4</option>
                         </select>
                     </label>
-                    <label>
-                        <span>Bathrooms</span>
-                        <select>
+                    <label className='block w-1/2 px-2'>
+                        <span className='text-sm font-semibold text-gray-500'>Bathrooms</span>
+                        <select className='mt-1 block w-full rounded-lg bg-gray-700 border-transparent shadow text-white leading-snug focus:bg-gray-600 focus:shadow-none'>
                             <option>2</option>
                         </select>
                     </label>
                 </div>
-                <div>
+                <div className='mt-4'>
                     <label>
-                        <span>Price range</span>
-                        <select>
+                        <span className='text-sm font-semibold text-gray-500'>Price range</span>
+                        <select className='mt-1 block w-full rounded-lg bg-gray-700 border-transparent shadow text-white leading-snug focus:bg-gray-600 focus:shadow-none'>
                             <option>Up to $2,000/wk</option>
                         </select>
                     </label>
                 </div>
             </fieldset>
-            <fieldset>
-                <legend>Property Type</legend>
-                <label>
-                    <input type='radio' name='propertyType' value='house' />House
+            <fieldset className='px-4 py-4 border-t border-gray-900'>
+                <span className='block text-sm font-semibold text-gray-500'>Property Type</span>
+                <label className='mt-3 flex items-center'>
+                    <input className='w-7 h-7 bg-gray-900 border-gray-900 focus:bg-gray-700' type='radio' name='propertyType' value='house' /><span className='ml-2 text-white'>House</span>             
                 </label>
-                <label>
-                    <input type='radio' name='propertyType' value='apartment' />Apartment
+                <label className='mt-3 flex items-center'>
+                    <input className='w-7 h-7 bg-gray-900 border-gray-900 focus:bg-gray-700' type='radio' name='propertyType' value='apartment' /><span className='ml-2 text-white'>Apartment</span>
                 </label>
-                <label>
-                    <input type='radio' name='propertyType' value='loft' />Loft
+                <label className='mt-3 flex items-center'>
+                    <input className='w-7 h-7 bg-gray-900 border-gray-900 focus:bg-gray-700' type='radio' name='propertyType' value='loft' /><span className='ml-2 text-white'>Loft</span>            
                 </label>
-                <label>
-                    <input type='radio' name='propertyType' value='townhouse' />Townhouse
-                </label>
-            </fieldset>
-            <fieldset>
-                <legend>Amenities</legend>
-                <label>
-                    <input type='checkbox' name='balcony' />Balcony
-                </label>
-                <label>
-                    <input type='checkbox' name='airConditioning' />Air conditioning
-                </label>
-                <label>
-                    <input type='checkbox' name='pool' />Pool
-                </label>
-                <label>
-                    <input type='checkbox' name='Beach' />Beach
-                </label>
-                <label>
-                    <input type='checkbox' name='petFriendly' />Pet friendly
-                </label>
-                <label>
-                    <input type='checkbox' name='kidFriendly' />Kid friendly
-                </label>
-                <label>
-                    <input type='checkbox' name='parking' />Parking
+                <label className='mt-3 flex items-center'>
+                    <input className='w-7 h-7 bg-gray-900 border-gray-900 focus:bg-gray-700' type='radio' name='propertyType' value='townhouse' /><span className='ml-2 text-white'>Townhouse</span>
                 </label>
             </fieldset>
-        </div>        
+            <fieldset className='px-4 py-4 border-t border-gray-900'>
+                <span className='block text-sm font-semibold text-gray-500'>Amenities</span>
+                <label className='mt-3 flex items-center'>
+                    <input className='w-5 h-5 bg-gray-900 border-gray-900 rounded-sm focus:bg-gray-700' type='checkbox' name='balcony' /><span className='ml-2 text-white'>Balcony</span>        
+                </label>
+                <label className='mt-3 flex items-center'>
+                    <input className='w-5 h-5 bg-gray-900 border-gray-900 rounded-sm focus:bg-gray-700' type='checkbox' name='airConditioning' /><span className='ml-2 text-white'>Air conditioning</span>
+                </label>
+                <label className='mt-3 flex items-center'>
+                    <input className='w-5 h-5 bg-gray-900 border-gray-900 rounded-sm focus:bg-gray-700' type='checkbox' name='pool' /><span className='ml-2 text-white'>Pool</span>
+                </label>
+                <label className='mt-3 flex items-center'>
+                    <input className='w-5 h-5 bg-gray-900 border-gray-900 rounded-sm focus:bg-gray-700' type='checkbox' name='beach' /><span className='ml-2 text-white'>Beach</span>
+                </label>
+                <label className='mt-3 flex items-center'>
+                    <input className='w-5 h-5 bg-gray-900 border-gray-900 rounded-sm focus:bg-gray-700' type='checkbox' name='petFriendly' /><span className='ml-2 text-white'>Pet friendly</span>
+                </label>
+                <label className='mt-3 flex items-center'>
+                    <input className='w-5 h-5 bg-gray-900 border-gray-900 rounded-sm focus:bg-gray-700'type='checkbox' name='kidFriendly' /><span className='ml-2 text-white'>Kid friendly</span>
+                </label>
+                <label className='mt-3 flex items-center'>
+                    <input className='w-5 h-5 bg-gray-900 border-gray-900 rounded-sm focus:bg-gray-700' type='checkbox' name='parking' /><span className='ml-2 text-white'>Parking</span>
+                </label>
+            </fieldset>
+            <div className="bg-gray-900 px-4 py-4">
+                <button className='block w-full bg-indigo-500 hover:bg-indigo-400 font-semibold text-white px-4 py-2 rounded-lg'>Update results</button>
+            </div>
+            
+        </form>        
     </section>
   )
 }

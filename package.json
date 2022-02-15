@@ -6,6 +6,7 @@
     "start": "cross-env NODE_ENV=production node server.j"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.4.0",
     "caniuse-lite": "^1.0.30001301",
     "cross-env": "^7.0.2",
     "date-fns": "^2.27.0",
