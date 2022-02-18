@@ -14,9 +14,10 @@ export default function Home() {
         <h3 className='text-gray-900 text-xl'>Los Angeles</h3>
         <p>Live like the stars in these luxurious Southern California estates.</p>
         <div className='mt-6'>
+
           <div>
-            <div>
-              <img className='rounded-lg shadow-md h-64' src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""/>
+            <div className='relative pb-5/6 bg-black'>
+              <img className='absolute inset-0 h-full rounded-lg shadow-md object-cover' src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""/>
             </div>
             <div className='relative px-4 -mt-16'>
               <div className='bg-white rounded-lg px-4 py-4 shadow-lg'>

@@ -6,7 +6,11 @@ module.exports = {
     './index.tsx'
   ],
   theme: {
-    extend: {},
+    extend: {
+      padding: {
+        '5/6': '83.3333333%'
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
