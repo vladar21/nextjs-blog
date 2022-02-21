@@ -5,8 +5,8 @@ const isOpen = false;
 export default function Layout() {
   const [isOpen, toggle] = useState(false);
   return (
-    <header className="bg-gray-900 sm:flex sm:items-center sm:justify-between">
-        <div className='flex justify-between px-4 py-3'>
+    <header className="bg-gray-900 sm:flex sm:items-center sm:justify-between xl:bg-white">
+        <div className='flex justify-between px-4 py-3 xl:w-72 xl:bg-gray-900 xl:justify-center xl:py-5'>
           <div>
             <svg className="h-8 w-auto" viewBox="0 0 185 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M121.09 28.336C123.442 28.336 125.482 27.088 126.514 25.216L123.826 23.68C123.346 24.664 122.314 25.264 121.066 25.264C119.218 25.264 117.85 23.896 117.85 22C117.85 20.08 119.218 18.712 121.066 18.712C122.29 18.712 123.322 19.336 123.802 20.32L126.466 18.76C125.482 16.912 123.442 15.664 121.09 15.664C117.442 15.664 114.754 18.424 114.754 22C114.754 25.576 117.442 28.336 121.09 28.336Z" fill="#A3BFFA"/>
@@ -22,8 +22,8 @@ export default function Layout() {
               <path d="M43.9111 12.6044L36.2129 8.15965V28.8051H45.2129V30.8051H1.21289V28.8051H5.21289V16.0858L1.48507 17.0177L1 15.0774L22.0896 9.80505H25.2119C24.8673 10.6225 24.6383 11.4844 24.5316 12.3637L24.0495 16.3386L29.2129 13.3574V28.8051H34.2129V8.16087L26.5166 12.6045C26.7383 10.7768 27.6279 9.04857 29.082 7.80504H24.9629C26.3311 5.98338 28.5098 4.80504 30.9639 4.80504C31.1807 4.80504 31.3965 4.81431 31.6084 4.8325L26.0166 1.60386C28.1123 0.710432 30.5879 0.779158 32.7129 2.00609C33.752 2.60582 34.5938 3.41673 35.2139 4.35325C35.834 3.41673 36.6748 2.60582 37.7139 2.00609C39.8389 0.779158 42.3154 0.710432 44.4111 1.60386L38.8184 4.8325C39.0312 4.81431 39.2471 4.80504 39.4648 4.80504C41.918 4.80504 44.0967 5.98338 45.4648 7.80504H41.3447C42.7998 9.04857 43.6895 10.7768 43.9111 12.6044ZM25.2129 28.8051V18.8051H19.2129V28.8051H25.2129ZM14.2129 20.8051C14.2129 21.9096 13.3175 22.8051 12.2129 22.8051C11.1083 22.8051 10.2129 21.9096 10.2129 20.8051C10.2129 19.7005 11.1083 18.8051 12.2129 18.8051C13.3175 18.8051 14.2129 19.7005 14.2129 20.8051Z" fill="#A3BFFA"/>
             </svg>
           </div>
-          <div className="flex">
-            <button onClick={() => toggle(!isOpen)} type='button' className='px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white sm:hidden'>
+          <div className="flex sm:hidden">
+            <button onClick={() => toggle(!isOpen)} type='button' className='px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white'>
               {!isOpen ? 
               <svg className="h-6 w-6 fill-current" viewBox="0 0 18 14" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 1C0 0.447715 0.447715 0 1 0H17C17.5523 0 18 0.447715 18 1C18 1.55228 17.5523 2 17 2H1C0.447716 2 0 1.55228 0 1ZM0 7C0 6.44772 0.447715 6 1 6H17C17.5523 6 18 6.44772 18 7C18 7.55228 17.5523 8 17 8H1C0.447716 8 0 7.55228 0 7ZM1 12C0.447715 12 0 12.4477 0 13C0 13.5523 0.447716 14 1 14H17C17.5523 14 18 13.5523 18 13C18 12.4477 17.5523 12 17 12H1Z" />
@@ -35,23 +35,34 @@ export default function Layout() {
         </div>
         
         {/* <nav className='sm:block' style={{ display: isOpen?"none":"block" }}> */}
-        <nav className={ isOpen?"block sm:flex sm:items-center sm:pr-4":"hidden sm:flex sm:items-center sm:pr-4" }>
-          <div className='px-2 pt-2 pb-5 border-b border-gray-800 sm:flex sm:border-b-0 sm:py-0 sm:px-0'>
-              <a href='#'className='block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:text-sm sm:px-2'>List your prop</a>
-              <a href='#'className='mt-1 block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:mt-0 sm:text-sm sm:px-2 sm:ml-2'>Trips</a>
-              <a href='#'className='mt-1 block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:mt-0 sm:text-sm sm:px-2 sm:ml-2'>Messages</a>
-          </div>
-          <div className='px-5 py-5 sm:py-0 sm:ml-4 sm:px-0'>           
-            <div className='flex items-center'>
-              <img className='h-10 w-10 object-cover rounded-full border-2 border-gray-600 sm:h-8 sm:w-8' src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="" />
-              <span className='ml-4 font-semibold text-gray-200 sm:hidden'>Isla Schoger</span>
+        <nav className={isOpen?"hidden":"sm:flex sm:items-center sm:px-4 xl:flex-1 xl:justify-between" }>
+          <div className='hidden xl:block xl:relative xl:max-w-xs xl:w-full'>
+            <div className='absolute inset-y-0 left-0 flex items-center pl-3'>
+            <svg className='h-6 w-6 fill-current text-gray-600' viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.3199 12.9056L15.4165 14.0023C15.8277 13.9795 16.2465 14.1252 16.5607 14.4393L19.5607 17.4393C20.1464 18.0251 20.1464 18.9749 19.5607 19.5607C18.9749 20.1464 18.0251 20.1464 17.4393 19.5607L14.4393 16.5607C14.1252 16.2465 13.9795 15.8277 14.0023 15.4165L12.9056 14.3199C11.551 15.3729 9.84871 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 9.84871 15.3729 11.551 14.3199 12.9056ZM8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z"/>
+            </svg>
+            </div>    
+            <input className='block w-full border border-transparent bg-gray-200 focus:outline-none focus:bg-white focus:border-gray-300 focus:text-gray-300 text-gray-900 rounded-lg pl-10 py-2 pr-3' placeholder="Search by keywords"/>
+          </div> 
+          <div className='sm:flex sm:items-center'>
+            <div className='px-2 pt-2 pb-5 border-b border-gray-800 sm:flex sm:border-b-0 sm:py-0 sm:px-0'>
+                <a href='#'className='block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:text-sm sm:px-2 xl:text-gray-900'>List your prop</a>
+                <a href='#'className='mt-1 block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-900'>Trips</a>
+                <a href='#'className='mt-1 block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-900'>Messages</a>
             </div>
-            <div className='mt-5 sm:hidden'>
-              <a href='#' className='block text-gray-400 hover:text-white'>Account settings</a>
-              <a href='#' className='mt-3 block text-gray-400 hover:text-white'>Support</a>
-              <a href='#' className='mt-3 block text-gray-400 hover:text-white'>Sign out</a>
-            </div>            
+            <div className='px-5 py-5 sm:py-0 sm:ml-4 sm:px-0'>           
+              <div className='flex items-center'>
+                <img className='h-10 w-10 object-cover rounded-full border-2 border-gray-600 sm:h-8 sm:w-8 xl:border-gray-300' src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="" />
+                <span className='ml-4 font-semibold text-gray-200 sm:hidden'>Isla Schoger</span>
+              </div>
+              <div className='mt-5 sm:hidden'>
+                <a href='#' className='block text-gray-400 hover:text-white'>Account settings</a>
+                <a href='#' className='mt-3 block text-gray-400 hover:text-white'>Support</a>
+                <a href='#' className='mt-3 block text-gray-400 hover:text-white'>Sign out</a>
+              </div>            
+            </div>
           </div>
+          
         </nav>  
       </header>
   )
